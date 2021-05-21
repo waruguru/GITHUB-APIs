@@ -13,7 +13,9 @@ import {RepoClass} from './repo-class';
 export class RestAPIService {
   //blueprint of classes
   userDetails:UserDetails
-  repoClass!:RepoClass
+  repoClass:RepoClass
+  repoData:any=[]//repo data full
+  singleRepoData:any=[]//for single repo data
 
 
   constructor(private http:HttpClient) { 
@@ -31,6 +33,8 @@ export class RestAPIService {
       name:string
     }
       //create api response containg all the data we need
+      //initialize promise as a variable
+
       let promise=new Promise((resolve,reject) =>{
         //communicate with API to get the information on name ,repo url and that
         this.http.get<ApiResponse>('https://api.github.com/users/'+ user +'?access_token=' + environment.apikey).toPromise().then(response =>{
@@ -40,7 +44,9 @@ export class RestAPIService {
           this.userDetails.name=response.name
 
           resolve("It is successful")
-        })
+        }), (error:any)=>{
+          reject(error);
+        }
 
       })
       return promise
@@ -50,7 +56,11 @@ export class RestAPIService {
   }
 
   // receiving the data 
-  //funcion for getRepo  [search ] from user query
+  getUserRepos(user:string){
+
+  }
+  //funcion for getRepo  [search ] from user query in array
+
   //create api response containg all the data we need
   //create a promise that upon resolve it returns the data and incase there is an error it rejects the error return array
 
