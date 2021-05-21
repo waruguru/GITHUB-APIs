@@ -58,7 +58,9 @@ export class RestAPIService {
   // receiving the data 
   getUserRepos(user:string){
     let promise =new Promise((resolve, reject) => {
-      this.http.get<any>('https://api.github.com/users/'+ user +'?access_token=' + environment.apikey)
+      this.http.get<any>('https://api.github.com/users/'+ user+'/repos?access_token=' + environment.apikey).toPromise().then(response =>{
+        
+      })
       
     })
 
