@@ -13,7 +13,7 @@ import {RepoClass} from './repo-class';
 export class RestAPIService {
   //blueprint of classes
   userDetails!:UserDetails
-  // repoClass!:RepoClass
+  repoClass!:RepoClass
 
 
   constructor() { }
