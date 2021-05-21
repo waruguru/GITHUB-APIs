@@ -31,9 +31,10 @@ export class RestAPIService {
       name:string
     }
       //create api response containg all the data we need
-      let promise=new Promise(function(resolve,reject){
+      let promise=new Promise((resolve,reject) =>{
         //communicate with API to get the information on name ,repo url and that
-        
+        this.http.get<any>("https://api.github.com/users/"+user)
+
       })
 
   }
