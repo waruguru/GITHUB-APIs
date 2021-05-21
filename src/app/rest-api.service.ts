@@ -11,6 +11,10 @@ import {RepoClass} from './repo-class';
   providedIn: 'root'
 })
 export class RestAPIService {
+  //blueprint of classes
+  userDetails!:UserDetails
+  // repoClass!:RepoClass
+
 
   constructor() { }
 }
