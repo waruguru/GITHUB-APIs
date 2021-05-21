@@ -22,7 +22,6 @@ export class RestAPIService {
   }
   // receiving the data 
   //funcion for getName  [search ] from user query
-  //create api response containg all the data we need
   //create a promise that upon resolve it returns the data and incase there is an error it rejects the error
   getUserDetails(user:string){
     interface ApiResponse{
@@ -31,6 +30,12 @@ export class RestAPIService {
       repos_url:string,
       name:string
     }
+      //create api response containg all the data we need
+      let promise=new Promise(function(resolve,reject){
+        //communicate with API to get the information on name ,repo url and that
+        
+      })
+
   }
 
   // receiving the data 
