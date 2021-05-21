@@ -6,7 +6,7 @@ import {environment} from '../environments/environment';
 //import user details
 import {UserDetails} from './user-details'
 //import repos
-import {RepoClass} from './repo-class';
+// import {RepoClass} from './repo-class';
 @Injectable({
   providedIn: 'root'
 })
