@@ -24,6 +24,14 @@ export class RestAPIService {
   //funcion for getName  [search ] from user query
   //create api response containg all the data we need
   //create a promise that upon resolve it returns the data and incase there is an error it rejects the error
+  getUserDetails(user:string){
+    interface ApiResponse{
+      login:string,
+      avatar_url:string,
+      repos_url:string,
+      name:string
+    }
+  }
 
   // receiving the data 
   //funcion for getRepo  [search ] from user query
