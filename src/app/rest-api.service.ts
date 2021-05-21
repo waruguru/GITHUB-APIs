@@ -59,10 +59,18 @@ export class RestAPIService {
   getUserRepos(user:string){
     let promise =new Promise((resolve, reject) => {
       this.http.get<any>('https://api.github.com/users/'+ user+'/repos?access_token=' + environment.apikey).toPromise().then(response =>{
-        
+        for ( var i=0;i<response.length;i++){
+        this.singleRepoData=new RepoClass(response[i].name,response[i].updated_at,response[i].html_url,response[i].clone_url,response[i].git_url, response[i].pushed_at,response[i].collaborators_url)
+        this.repoData.push(this.singleRepoData)
+        }
+        resolve('It is super succesful')
+      }),(error:any)=>{
+        reject(error)
+      }
       })
+      return promise;
       
-    })
+    
 
   }
   //funcion for getRepo  [search ] from user query in array
