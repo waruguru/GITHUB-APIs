@@ -12,7 +12,7 @@ import {RepoClass} from './repo-class';
 })
 export class RestAPIService {
   //blueprint of classes
-  userDetails!:UserDetails
+  userDetails:UserDetails
   repoClass!:RepoClass
 
 
@@ -33,9 +33,20 @@ export class RestAPIService {
       //create api response containg all the data we need
       let promise=new Promise((resolve,reject) =>{
         //communicate with API to get the information on name ,repo url and that
-        this.http.get<any>("https://api.github.com/users/"+user)
+        this.http.get<ApiResponse>('https://api.github.com/users/'+ user +'?access_token=' + environment.apikey).toPromise().then(response =>{
+          this.userDetails.login=response.login,
+          this.userDetails.avatar_url=response.avatar_url,
+          this.userDetails.repo_url=response.repos_url
+          this.userDetails.name=response.name
+
+          resolve("It is successful")
+        })
+
+
 
       })
+
+      
 
   }
 
