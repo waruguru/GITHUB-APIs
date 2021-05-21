@@ -42,9 +42,8 @@ export class RestAPIService {
           resolve("It is successful")
         })
 
-
-
       })
+      return promise
 
       
 
