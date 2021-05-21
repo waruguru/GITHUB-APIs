@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import {RestAPIService} from './rest-api.service'//connecting to service class
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'restApi';
+  
+  //internalize the services
+
+restservice :any //declared
+  constructor(rstservice:RestAPIService){ //initialized
+    this.restservice=rstservice
+
+  }
+  //internalize the services
+
 }
