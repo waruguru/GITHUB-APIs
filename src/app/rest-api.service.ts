@@ -60,6 +60,8 @@ export class RestAPIService {
 
   // receiving the data 
   getUserRepos(user:string){
+//delete everything in the array
+    this.repoData.splice(0,this.repoData.length)
     let promise =new Promise((resolve, reject) => {
       this.http.get<any>('https://api.github.com/users/'+ user+'/repos?access_token=' + environment.apikey).toPromise().then(response =>{
         for ( var i=0;i<response.length;i++){
