@@ -20,7 +20,7 @@ export class RestAPIService {
 
   constructor(private http:HttpClient) { 
     this.userDetails=new UserDetails('','','','');//for userDetails
-    this.repoClass=new RepoClass('',newDate() ,'','','','','')//for repos
+    this.repoClass=new RepoClass('',newData(),'','','','','')//for repos
   }
   // receiving the data 
   //funcion for getName  [search ] from user query
@@ -84,3 +84,7 @@ export class RestAPIService {
   //create a promise that upon resolve it returns the data and incase there is an error it rejects the error return array
 
 }
+function newData(): Date {
+  throw new Error('Function not implemented.');
+}
+

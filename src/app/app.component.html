@@ -9,11 +9,11 @@
 <button (click)='displayUserDetails()'> Display</button>
 <!-- //brackets for binding -->
 <p>Login Name {{holduserDetails.login}}</p>
-<a href="{{holduserDetails.repos_url}}"></a>
+<a href="{{holduserDetails.repo_url}}"></a>
 <img src="{{holduserDetails.avatar_url}}">
 <p>{{holduserDetails.name}}</p>
 
 <hr>
 <h3>User Repos</h3>
-<button (click)='displayUserRepo'>Display</button>
+<button (click)='displayUserDetails'>Display</button>
 <router-outlet></router-outlet>

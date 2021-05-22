@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+// import { ChangeDetectionStrategy } from '@angular/compiler/src/core';
+import { Component,DoCheck } from '@angular/core';
 import {RestAPIService} from './rest-api.service'//connecting to service class
 import { UserDetails } from './user-details';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  // changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
