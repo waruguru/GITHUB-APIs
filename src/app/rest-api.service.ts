@@ -26,6 +26,9 @@ export class RestAPIService {
   //funcion for getName  [search ] from user query
   //create a promise that upon resolve it returns the data and incase there is an error it rejects the error
   getUserDetails(user:string){
+    //declare data as empty everytime the data is called
+    this.userDetails=new UserDetails('','','','');//for userDetails
+
     interface ApiResponse{
       login:string,
       avatar_url:string,

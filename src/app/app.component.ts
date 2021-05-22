@@ -7,14 +7,18 @@ import {RestAPIService} from './rest-api.service'//connecting to service class
 })
 export class AppComponent {
   title = 'restApi';
-  
+
   //internalize the services
 
 restservice :any //declared
+
+search!:string;
   constructor(rstservice:RestAPIService){ //initialized
     this.restservice=rstservice
 
   }
-  //internalize the services
+  submitUser(){
+    this.restservice.getUserDetails(this.search)
+  }
 
 }
