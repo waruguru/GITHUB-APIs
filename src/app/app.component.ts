@@ -3,10 +3,12 @@ import { Component,DoCheck } from '@angular/core';
 import {RestAPIService} from './rest-api.service'//connecting to service class
 import { UserDetails } from './user-details';
 @Component({
+  moduleId:module.id,
   selector: 'app-root',
   templateUrl: './app.component.html',
   // changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./app.component.css']
+  providers:[RestAPIService]
 })
 export class AppComponent {
   title = 'restApi';
