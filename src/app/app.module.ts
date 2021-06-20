@@ -1,28 +1,34 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from "@angular/forms";
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProfileComponent } from './profile/profile.component';
-import { SearchRepoComponent } from './search-repo/search-repo.component';
-import { DetailsRepoComponent } from './details-repo/details-repo.component';
-import { SearchOneComponent } from './search-one/search-one.component';
+import { GoalComponent } from './goal/goal.component';
+import { GoalDetailComponent } from './goal-detail/goal-detail.component';
+import { StrikethroughDirective } from './strikethrough.directive';
+import { DateCountPipe } from './date-count.pipe';
+import { GoalFormComponent } from './goal-form/goal-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent,
-    SearchRepoComponent,
-    DetailsRepoComponent,
-    SearchOneComponent
+    GoalComponent,
+    GoalDetailComponent,
+    StrikethroughDirective,
+    DateCountPipe,
+    GoalFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
-    FormsModule
+    NgProgressModule.forRoot(),
+    NgProgressHttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

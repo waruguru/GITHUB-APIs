@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "restApi": {
+    "Goals": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/restApi",
+            "outputPath": "dist/Goals",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "restApi:build"
+            "browserTarget": "Goals:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "restApi:build:production"
+              "browserTarget": "Goals:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "restApi:build"
+            "browserTarget": "Goals:build"
           }
         },
         "test": {
@@ -113,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "restApi:serve"
+            "devServerTarget": "Goals:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "restApi:serve:production"
+              "devServerTarget": "Goals:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "restApi"
+  "defaultProject": "Goals"
 }

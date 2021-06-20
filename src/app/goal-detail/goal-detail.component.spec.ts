@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetailsRepoComponent } from './details-repo.component';
+import { GoalDetailComponent } from './goal-detail.component';
 
-describe('DetailsRepoComponent', () => {
-  let component: DetailsRepoComponent;
-  let fixture: ComponentFixture<DetailsRepoComponent>;
+describe('GoalDetailComponent', () => {
+  let component: GoalDetailComponent;
+  let fixture: ComponentFixture<GoalDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetailsRepoComponent ]
+      declarations: [ GoalDetailComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DetailsRepoComponent);
+    fixture = TestBed.createComponent(GoalDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

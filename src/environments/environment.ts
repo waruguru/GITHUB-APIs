@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  apikey: "ng serve --host 0.0.0.0 --port 8080"
-
+  apiUrl: "http://quotes.stormconsultancy.co.uk/random.json"
 };
 
 /*

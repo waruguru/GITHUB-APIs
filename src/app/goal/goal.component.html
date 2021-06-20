@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="card my-5 shadow bg-white rounded">
+    <div class="card-header bg-dark text-white">
+        <ng-progress></ng-progress>
+      <h1 class="mx-4 mt-4">My Goals</h1>
+    </div>
+
+    <ul>
+      <div class="row px-5 py-4">
+        <div class="col-md-6">
+          <div *ngFor="let goal of goals; let i = index">
+            <li class="user-select-none" appStrikethrough>
+              {{ goal.name }} due on {{ goal.completeDate | date }}
+            </li>
+
+            <button
+              class="btn btn-outline-success my-2"
+              (click)="toggleDetails(i)"
+            >
+              Toggle Details
+            </button>
+            <app-goal-detail
+              *ngIf="goal.showDescription"
+              [goal]="goal"
+              (isComplete)="deleteGoal($event, i)"
+            ></app-goal-detail>
+          </div>
+        </div>
+        <div class="col-md-6">
+            <app-goal-form (addGoal)='addNewGoal($event)'></app-goal-form>
+        </div>
+      </div>
+    </ul>
+    <div
+      *ngIf="goals.length > 5"
+      class=" px-5 alert alert-warning">WARNING: You have too many goals.</div>
+      <div class="row mx-2">
+          <blockquote class="blockquote text-center">
+              <p class="my-4">{{quote.quote}}</p>
+              <footer class="blockquote-footer"><cite>{{quote.author}}</cite></footer>
+          </blockquote>
+      </div>
+  </div>
+</div>
