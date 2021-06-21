@@ -1,15 +1,5 @@
 # Github Search
 ### By **waruguru**
-#
-![Search Page](src/assets/search.png)
-Search Page
-#
-![Results Page](src/assets/results.png)
-Search Results
-#
-![404 Page](src/assets/404.png)
-404 Page
-#
 ## Description
 Github search is a website where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories.
 
